@@ -5,15 +5,12 @@
  */
 var appendCharacters = function(s, t) {
     let index1 = 0;
-    let index2 = 0;
-    while(index1 < s.length && index2 < t.length){
-        if(s[index1] == t[index2]){
-            index2++;
-            index1++;
-        } else {
+    
+    for(let i = 0; i < s.length; i++){
+        if(s[i] == t[index1]){
             index1++;
         }
     }
 
-    return t.length - index2;
+    return t.length - index1;
 };
