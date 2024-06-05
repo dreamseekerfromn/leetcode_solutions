@@ -3,33 +3,35 @@
  * @return {string[]}
  */
 var commonChars = function(words) {
-    let hash = {};
+    let hash = new Array(26).fill(0);
     for(let i of words[0]){
-        hash[i] = (hash[i] + 1) || 1;
+        hash[i.charCodeAt(0) - 'a'.charCodeAt(0)]++;
     }
     for(let i of words){
-        let hash2 = {};
+        let hash2 =  new Array(26).fill(0);
         for(let j of i){
-            hash2[j] = (hash2[j] + 1) || 1;
+            if(hash[j.charCodeAt(0) - 'a'.charCodeAt(0)] > 0)
+                hash2[j.charCodeAt(0) - 'a'.charCodeAt(0)]++;
+            else
+                hash[j.charCodeAt(0) - 'a'.charCodeAt(0)] = 0;
         }
 
-        for(let k in hash){
-            if(!hash2[k]){
-                delete hash[k];
-            } else {
-                if(hash[k] != hash2[k]){
-                    hash[k] = (hash[k] < hash2[k] ? hash[k] : hash2[k]);
-                }
+        for(let k = 0; k < 26; k++){
+            if(hash[k] != hash2[k]){
+                hash[k] = (hash[k] < hash2[k] ? hash[k] : hash2[k]);
             }
         }
     }
 
-    let result = "";
-    for(let l in hash){
-        for(let m = 0; m < hash[l]; m++){
-            result += l;
+    let result = [];
+    for(let l = 0; l < hash.length; l++){
+        if(hash[l] > 0){
+            for(let m = 0; m < hash[l]; m++){
+                result.push(String.fromCharCode(l + 'a'.charCodeAt(0)));
+            }
         }
+        
     }
 
-    return result.split('');
+    return result;
 };
