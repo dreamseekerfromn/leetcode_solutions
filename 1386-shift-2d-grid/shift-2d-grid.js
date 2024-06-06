@@ -8,18 +8,26 @@ var shiftGrid = function(grid, k) {
     let rowLength = grid[0].length;
     let result = [];
 
-    for(let i = 0; i < k; i++){
-        let temp = arr.pop();
-        arr.unshift(temp);
+    if(grid.length == 1 && grid[0].length == 1){
+        return grid;
     }
 
     for(let i = 0; i < grid.length; i++){
-        let tempArr = [];
-        for(let j = 0; j < rowLength; j++){
-            let temp = arr.shift();
-            tempArr.push(temp);
+        let temp = new Array(grid[0].length).fill(0);
+        result.push(temp);
+    }
+
+    for(let j = 0; j < grid.length; j++){
+        for(let l = 0; l < grid[j].length; l++){
+            let col = (l+k) % grid[j].length;
+            let row = Math.floor((l+k) / grid[j].length) + j;
+
+            while(row >= grid.length){
+                row -= grid.length;
+            }
+            
+            result[row][col] = grid[j][l]
         }
-        result.push(tempArr);
     }
 
     return result;
