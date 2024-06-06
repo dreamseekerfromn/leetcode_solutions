@@ -22,10 +22,10 @@ var shiftGrid = function(grid, k) {
             let col = (l+k) % grid[j].length;
             let row = Math.floor((l+k) / grid[j].length) + j;
 
-            while(row >= grid.length){
-                row -= grid.length;
+            if(row >= grid.length){
+                row = row % grid.length;
             }
-            
+
             result[row][col] = grid[j][l]
         }
     }
