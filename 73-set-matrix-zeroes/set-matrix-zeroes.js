@@ -3,8 +3,8 @@
  * @return {void} Do not return anything, modify matrix in-place instead.
  */
 var setZeroes = function(matrix) {
-    let row = {};
-    let col = {};
+    let row = new Array(matrix.length).fill(false);
+    let col = new Array(matrix[0].length).fill(false);
 
     for(let i = 0; i < matrix.length; i++){
         for(let j = 0; j < matrix[i].length; j++){
@@ -15,15 +15,20 @@ var setZeroes = function(matrix) {
         }
     }
 
-    for(let i in row){
-        for(let j = 0; j < matrix[Number(i)].length; j++){
-            matrix[Number(i)][j] = 0;
+    for(let i = 0; i < row.length; i++){
+        if(row[i]){
+            for(let j = 0; j < matrix[i].length; j++){
+                matrix[i][j] = 0;
+            }
         }
+        
     }
 
-    for(let j in col){
-        for(let i = 0; i < matrix.length; i++){
-            matrix[i][Number(j)] = 0;
+    for(let j = 0; j < col.length; j++){
+        if(col[j]){
+            for(let i = 0; i < matrix.length; i++){
+                matrix[i][j] = 0;
+            }
         }
     }
 };
