@@ -26,6 +26,4 @@ var setZeroes = function(matrix) {
             matrix[i][Number(j)] = 0;
         }
     }
-
-    return matrix;
 };
