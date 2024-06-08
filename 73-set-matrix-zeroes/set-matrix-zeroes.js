@@ -7,6 +7,7 @@ var setZeroes = function(matrix) {
     let row = new Set();
     let col = new Set();
 
+    //marking 0s to hash or set (or array) first
     for(let i = 0; i < matrix.length; i++){
         for(let j = 0; j < matrix[i].length; j++){
             if(matrix[i][j] == 0){
@@ -16,6 +17,7 @@ var setZeroes = function(matrix) {
         }
     }
 
+    //replace marked row & col to 0
     for(let i of row){
         for(let j = 0; j < matrix[i].length; j++){
             matrix[i][j] = 0;
