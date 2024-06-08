@@ -15,20 +15,19 @@ var setZeroes = function(matrix) {
         }
     }
 
-    for(let i = 0; i < row.length; i++){
-        if(row[i]){
-            for(let j = 0; j < matrix[i].length; j++){
-                matrix[i][j] = 0;
+    row.forEach((r, index) => {
+        if(r){
+            for(let j = 0; j < matrix[index].length; j++){
+                matrix[index][j] = 0;
             }
         }
-        
-    }
-
-    for(let j = 0; j < col.length; j++){
-        if(col[j]){
-            for(let i = 0; i < matrix.length; i++){
-                matrix[i][j] = 0;
+    })
+    
+    col.forEach((c, index) => {
+        if(c){
+            for(let j = 0; j < matrix.length; j++){
+                matrix[j][index] = 0;
             }
         }
-    }
+    })
 };
