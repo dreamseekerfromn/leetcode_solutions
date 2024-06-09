@@ -5,7 +5,7 @@
  */
 var nextGreatestLetter = function(letters, target) {
     for(let i = 0; i < letters.length; i++){
-        if(target.charCodeAt(0) < letters[i].charCodeAt(0)){
+        if(target < letters[i]){
             return letters[i];
         }
     }
