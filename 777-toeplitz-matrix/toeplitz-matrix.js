@@ -7,9 +7,7 @@ var isToeplitzMatrix = function(matrix) {
         return true;
     }
     for(let i = 1; i < matrix.length; i++){
-        for(let j = 0; j < matrix[0].length; j++){
-            if(j == 0)
-                continue;
+        for(let j = 1; j < matrix[0].length; j++){
             if(matrix[i][j] != matrix[i-1][j-1]){
                 return false;
             }
