@@ -1,7 +1,7 @@
 bool isToeplitzMatrix(int** matrix, int matrixSize, int* matrixColSize) {
-    if(matrixSize == 1 && *matrixColSize == 1){
+    /*if(matrixSize == 1 && *matrixColSize == 1){
         return true;
-    }
+    }*/
 
     for(int i = 1; i < matrixSize; i++){
         for(int j = 1; j < *matrixColSize; j++){
