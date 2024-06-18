@@ -3,6 +3,8 @@
  * @return {boolean}
  */
 var isPowerOfTwo = function(n) {
-    let log = (Math.log(n)/Math.log(2)).toFixed(10);
-    return log % 1 == 0;
+    if(n > 1 && n % 2 == 0){
+        return isPowerOfTwo(n/2);
+    }
+    return (n == 1);
 };
