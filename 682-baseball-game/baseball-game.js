@@ -19,9 +19,5 @@ var calPoints = function(operations) {
         }
     }
     
-    let sum = 0;
-    for(let i = 0; i < record.length; i++){
-        sum += record[i];
-    }
-    return sum;
+    return record.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 };
