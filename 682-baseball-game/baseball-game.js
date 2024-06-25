@@ -11,8 +11,8 @@ var calPoints = function(operations) {
         } else if(operations[i] == 'C'){
             record.pop();
         } else if(operations[i] == '+'){
-            let num1 = record.at(-1);
-            let num2 = record.at(-2);
+            let num1 = record[record.length - 1];
+            let num2 = record[record.length - 2];
             record.push(num1 + num2);
         } else {
             record.push(Number(operations[i]));
