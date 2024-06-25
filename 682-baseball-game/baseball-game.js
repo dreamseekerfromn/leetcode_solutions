@@ -11,11 +11,11 @@ var calPoints = function(operations) {
         } else if(operations[i] == 'C'){
             record.pop();
         } else if(operations[i] == '+'){
-            let num1 = Number(record.at(-1));
-            let num2 = Number(record.at(-2));
+            let num1 = record.at(-1);
+            let num2 = record.at(-2);
             record.push(num1 + num2);
         } else {
-            record.push(operations[i]);
+            record.push(Number(operations[i]));
         }
     }
     if(record.length == 0){
@@ -24,7 +24,7 @@ var calPoints = function(operations) {
 
     let sum = 0;
     for(let i of record){
-        sum += Number(i);
+        sum += i;
     }
     return sum;
 };
