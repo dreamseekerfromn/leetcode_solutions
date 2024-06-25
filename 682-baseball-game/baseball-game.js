@@ -18,10 +18,7 @@ var calPoints = function(operations) {
             record.push(Number(operations[i]));
         }
     }
-    if(record.length == 0){
-        return 0;
-    }
-
+    
     let sum = 0;
     for(let i = 0; i < record.length; i++){
         sum += record[i];
