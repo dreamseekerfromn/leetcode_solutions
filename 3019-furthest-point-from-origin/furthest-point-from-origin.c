@@ -12,8 +12,5 @@ int furthestDistanceFromOrigin(char * moves){
         }
     }
 
-    int temp1 = abs(hor - lodash);
-    int temp2 = abs(hor + lodash);
-
-    return temp1 > temp2 ? temp1 : temp2;
+    return abs(hor) + lodash;
 }
