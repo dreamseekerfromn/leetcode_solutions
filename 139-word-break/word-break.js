@@ -4,6 +4,9 @@
  * @return {boolean}
  */
 var wordBreak = function(s, wordDict) {
+    /***************
+        declare trie
+     ***************/
     class trieNode {
         constructor(value = ""){
             this.children = new Map();
@@ -70,7 +73,7 @@ var wordBreak = function(s, wordDict) {
         for(let j = i; j < s.length; j++){
             word += s[j];
 
-            if(trieDict.search(word) && trieDict.prefix(word)){
+            if(trieDict.prefix(word)){
                 if(i == 0){
                     dp[j] = 1;
                 }
