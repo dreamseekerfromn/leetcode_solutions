@@ -73,7 +73,7 @@ var wordBreak = function(s, wordDict) {
         for(let j = i; j < s.length; j++){
             word += s[j];
 
-            if(trieDict.prefix(word)){
+            if(trieDict.search(word)){
                 if(i == 0){
                     dp[j] = 1;
                 }
