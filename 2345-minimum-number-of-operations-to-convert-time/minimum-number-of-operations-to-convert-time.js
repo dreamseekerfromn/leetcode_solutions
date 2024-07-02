@@ -8,9 +8,7 @@ var convertTime = function(current, correct) {
     correct = correct.split(":");
 
     let result = 0;
-    let currMin = parseInt(current[0]) * 60 + parseInt(current[1]);
-    let crctMin = parseInt(correct[0]) * 60 + parseInt(correct[1]);
-    let minDiff = crctMin - currMin;
+    let minDiff = (parseInt(correct[0]) * 60 + parseInt(correct[1])) - (parseInt(current[0]) * 60 + parseInt(current[1]));
 
     result += Math.floor(minDiff / 60);
     minDiff = minDiff % 60;
