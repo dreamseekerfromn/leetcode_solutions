@@ -14,14 +14,14 @@ var evaluateTree = function(root) {
     if(root.val == 0 || root.val == 1){
         return root.val;
     } 
-    else {
-        if(root.val == 2){
-            return evaluateTree(root.left) || evaluateTree(root.right);
-        } 
-            
-        return evaluateTree(root.left) && evaluateTree(root.right);
+    
+    if(root.val == 2){
+        return evaluateTree(root.left) || evaluateTree(root.right);
+    } 
         
-    }
+    return evaluateTree(root.left) && evaluateTree(root.right);
+        
+    
     
     return evaluateTree(root);
 };
