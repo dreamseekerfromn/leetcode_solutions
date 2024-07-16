@@ -20,8 +20,4 @@ var evaluateTree = function(root) {
     } 
         
     return evaluateTree(root.left) && evaluateTree(root.right);
-        
-    
-    
-    return evaluateTree(root);
 };
