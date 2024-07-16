@@ -11,19 +11,17 @@
  * @return {boolean}
  */
 var evaluateTree = function(root) {
-    function traversal(node){
-        if(node.val == 0){
-            return false;
-        } else if(node.val == 1){
-            return true;
-        } else {
-            if(node.val == 2){
-                return traversal(node.left) || traversal(node.right);
-            } else if(node.val == 3){
-                return traversal(node.left) && traversal(node.right);
-            }
-        }
+    if(root.val == 0 || root.val == 1){
+        return root.val;
+    } 
+    else {
+        if(root.val == 2){
+            return evaluateTree(root.left) || evaluateTree(root.right);
+        } 
+            
+        return evaluateTree(root.left) && evaluateTree(root.right);
+        
     }
-
-    return traversal(root);
+    
+    return evaluateTree(root);
 };
