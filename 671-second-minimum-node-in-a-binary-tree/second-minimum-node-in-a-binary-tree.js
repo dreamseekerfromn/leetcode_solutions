@@ -19,6 +19,7 @@ var findSecondMinimumValue = function(root) {
             return null;
         }
         if(node.val < smallest){
+            second = smallest;
             smallest = node.val;
         } else if(node.val > smallest && node.val < second){
             second = node.val;
