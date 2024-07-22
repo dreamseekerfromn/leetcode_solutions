@@ -11,24 +11,20 @@
  * @return {TreeNode}
  */
 var increasingBST = function(root) {
-    let stack = [];
+    let newRoot = new TreeNode();
+    let pointer = newRoot;
+
     function traversal(node){
         if(!node){
             return null;
         }
         traversal(node.left);
-        stack.push(node.val);
+        pointer.right = new TreeNode(node.val);
+        pointer = pointer.right;
         traversal(node.right);
     }
     
     traversal(root);
-
-    let result = new TreeNode(stack.shift());
-    let branch = result;
-    while(stack.length){
-        branch.right = new TreeNode(stack.shift());
-        branch = branch.right;
-    }
-    console.log(result)
-    return result;
+    newRoot = newRoot.right;
+    return newRoot;
 };
