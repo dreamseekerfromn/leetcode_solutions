@@ -10,15 +10,15 @@ var moveZeroes = function(nums) {
             index1++;
             index2 = index1 + 1;
         } else {
-            if(nums[index2] != 0){
+            
                 [nums[index1], nums[index2]] = [nums[index2], nums[index1]]
-            } else {
+            
                 index2++;
                 if(index2 == nums.length){
                     index1++;
                     index2 = index1 + 1;
                 }
-            }
+            
         }
     }
 };
