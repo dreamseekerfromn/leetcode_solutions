@@ -11,9 +11,7 @@ var moveZeroes = function(nums) {
             index2 = index1 + 1;
         } else {
             if(nums[index2] != 0){
-                let temp = nums[index2];
-                nums[index2] = nums[index1];
-                nums[index1] = temp;
+                [nums[index1], nums[index2]] = [nums[index2], nums[index1]]
             } else {
                 index2++;
                 if(index2 == nums.length){
