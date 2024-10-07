@@ -10,7 +10,7 @@ var checkInclusion = function(s1, s2) {
     for(let i of s1){
         hash[i.charCodeAt(0) - 'a'.charCodeAt(0)]++;
     }
-    for(let i = 0; i < s2.length; i++){
+    for(let i = 0; i <= s2.length - s1.length; i++){
         let temp = new Array(26).fill(0);
         flag = true;
         for(let j = i; j < i + s1.length; j++){
