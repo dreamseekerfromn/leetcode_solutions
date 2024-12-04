@@ -19,7 +19,6 @@ var searchBST = function(root, val) {
         if(node.val == val){
             return node;
         }
-        console.log(node.val)
         return trav(node.left) || trav(node.right);
     }
     return trav(root);
